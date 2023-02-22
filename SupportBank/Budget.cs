@@ -55,11 +55,11 @@ class Budget
                 if (t.PersonTo.Name == a.Name) accountSum -= t.Amount;
             }
             Console.WriteLine($"Name: {a.Name} Amount: {accountSum} in {(accountSum > 0 ? "credit" : "debit")}"); 
-
         }
-
     }
-    public void ListAccount(string name) {
+    public void ListAccount() {
+        Console.WriteLine("Please enter the user you want to see");
+        string name = Console.ReadLine();
         Console.WriteLine($"user {name} has the following transactions:");
             foreach(Transaction t in Transactions){
                 if (t.PersonFrom.Name==name || t.PersonTo.Name==name){
