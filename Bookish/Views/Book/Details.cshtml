@@ -1,0 +1,27 @@
+@model Bookish.Models.BookDatabaseModel
+@{
+    ViewData["Title"]="Book Details";
+}
+ 
+ <fieldset>
+            <legend>Book Details</legend>
+            <div>
+                <label for="title">Book Title:</label>
+                <input type="text" name="title" value=@Model.Title />
+            </div>
+            <div>
+                <label for="author">Author:</label>
+                <input type="text" name="author" value=@Model.Author/>
+            </div>
+            <div>
+                <label for="year">Publish Year:</label>
+                <input type="text" name= "year" value=@Model.Year />
+            </div>
+           
+                
+           
+        </fieldset>
+
+   
+    <a asp-controller="Book" asp-action="Index">Back to All Books</a>
+

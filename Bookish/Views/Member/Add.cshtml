@@ -1,0 +1,35 @@
+@model Bookish.Models.MemberRequestModel
+
+@{
+    ViewData["Title"] = "Add Member";
+}
+
+
+
+
+    
+   <form method="post" asp-controller="Member" asp-action="Add">
+        <fieldset>
+            <legend>Add A Member</legend>
+            <div mb-3>
+                <label for="firstName">First Name:
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName"class="text-danger" ></span>
+                </label>
+            </div>
+            <div mb-3>
+                <label for="lastName">Last Name:</label>
+                <input asp-for="LastName"  class="form-control"/>
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div mb-3>
+                <label for="dateOfBirth">Date Of Birth:</label>
+                <input asp-for="DateOfBirth" class="form-control" />
+                <span asp-validation-for="DateOfBirth"class="text-danger" ></span>
+            </div>
+            <div>
+                <label>&nbsp;</label>
+                <input type="submit" value="Submit" class="submit" />
+            </div>
+        </fieldset>
+    </form>

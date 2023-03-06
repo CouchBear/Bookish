@@ -1,0 +1,36 @@
+@namespace Bookish
+@model List<Models.BookDatabaseModel>
+@{
+    ViewData["Title"] = "Books";
+}
+
+
+   <h1>All Books</h1>
+
+   <table>
+       <thead>
+           <tr>
+               <th>Id</th>
+               <th>Title
+               <th>Author</th>
+               <th>Year</th>
+
+       
+           </tr>
+       </thead>
+       <tbody>
+        @foreach(var item in Model)
+        {<tr>
+            <td>@item.Id</td>
+            <td>@item.Title</td> 
+            <td>@item.Author</td>
+            <td>@item.Year</td>
+            <td><a asp-controller="Book" asp-action="Details" asp-route-id="@item.Id">Details</a>|
+            <a asp-controller="Book" asp-action="Edit" asp-route-id="@item.Id">Edit</a>|<a asp-controller="Book" asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>
+
+        </tr>
+        }
+       </tbody>
+   </table> 
+
+   <a href="~/Book/Add">Add A Book</a>

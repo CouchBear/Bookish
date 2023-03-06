@@ -1,0 +1,32 @@
+@model Bookish.Models.BookRequestModel
+@{
+    ViewData["Title"] = "Add Book";
+}
+
+    <form method="post" asp-controller="Book" asp-action="Add">
+        <fieldset>
+            <legend>Add A Book</legend>
+            <div asp-validation-summary="All"></div>
+
+            <div mb-3>
+                <label for="title">Book Title:</label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" style={display:block} class="text-danger"></span>
+            </div>
+            <div mb-3>
+                <label for="author">Author:</label>
+                <input asp-for="Author" class="form-control" />
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+            <div mb-3>
+                <label for="year">Publish Year:</label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year"class="text-danger" ></span>
+            </div>
+            <div>
+                <label>&nbsp;</label>
+                <input type="submit" value="Submit" class="submit" />
+            </div>
+        </fieldset>
+      
+    </form>

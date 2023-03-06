@@ -1,0 +1,28 @@
+@model Bookish.Models.BookDatabaseModel
+
+@{
+    ViewData["Title"]="Book Details";
+}
+ <form method="post" asp-controller="Book" asp-action="PostEdit" asp-route-id="@Model.Id">
+ <fieldset>
+            <legend>Book Details</legend>
+            <div mb-3>
+                <label for="title">Book Title:</label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div mb-3>
+                <label for="author">Author:</label>
+                <input asp-for="Author"class="form-control" />
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+            <div mb-3>
+                <label for="year">Publish Year:</label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year"  class="text-danger"></span>
+            </div>
+           
+                <button type="submit" name="editButton">Save Edit</button>
+           
+        </fieldset>
+    </form>
